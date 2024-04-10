@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css"/>
     <!--box icons-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <title>Harish Portfolio</title>
 </head>
 <body>
@@ -15,19 +16,20 @@
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
-            <a href="#projects">Projects</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Projects</a>
             <a href="#contact">Contact</a>
-        </nav>
-        
+        </nav>    
         <div class='bx bx-moon' id="darkMoon-icon"></div>
+        <div class='bx bx-menu' id="menu-icon"></div>
     </header>
-
+    
     <!-- home section design -->
     <section class="home" id="home">
         <div class="home-content">
             <h3>Hello, I am</h3>
-            <h1>Harish Vithanala</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, labore.</p>
+            <h1><span>Harish</span> Vithanala</h1>
+            <p>Passionate <b>Web Developer, Software Developer</b> and <b>Photographer</b> with a creative mind and innovative strategies.</p>
 
             <div class="social-media">
                 <a href="#"><i class='bx bxl-facebook'></i></a>
@@ -36,19 +38,19 @@
                 <a href="#"><i class='bx bxl-linkedin' ></i></a>
             </div>
 
-            <a href="#" class="btn">Download Resume</a>
+            <a href="../Images/Harish_Vithanala_Updated.pdf" class="btn" download="resume.pdf">Download Resume</a>
         </div>
         <div class="profession-container">
             <div class="profession-box">
-                <div class="profession" style="--i:0;color: black;">
+                <div class="profession" style="--i:0;">
                     <i class='bx bx-code-alt'></i>
                     <h3>Web Developer</h3>
                 </div>
-                <div class="profession" style="--i:1;color: black;">
+                <div class="profession" style="--i:1;">
                     <i class='bx bx-code-curly'></i>
                     <h3>Software Dev</h3>
                 </div>
-                <div class="profession" style="--i:2;color: black;">
+                <div class="profession" style="--i:2;">
                     <i class='bx bx-camera'></i>
                     <h3>Photographer</h3>
                 </div>
@@ -60,11 +62,181 @@
             <img src="Images/half.png" alt="">
         </div>
     </section>
+
     <!-- about section design -->
     <section class="about" id="about">
         <div class="about-img">
-            <img src="Images/" alt="">
+            <img src="Images/image (3).png" alt="">
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Hi, I'm <b>Harish</b></h3>
+            <p>
+                Innovative software engineer with a keen eye for detail and a love for problem-solving. Experienced in developing scalable applications using Java, Python, C, Web Development(HTML5, CSS, Bootstrap, ReactJS), Data Bases(MYSQL, MongoDB), Git, GitHub and JavaScript along with it's frameworks.
+            </p>
+                <p id="extra-content">
+                    I'm always eager to stay on top of the latest technologies and contribute to cutting-edge projects. Open to new opportunities where I can apply my skills to create robust and user-friendly software solutions.
+                </p>
+            <button onclick="toggleContent()" id="toggleBtn" class="btn">Read More</button>
+        </div>
+        
+    </section>
+
+    <!-- services section -->
+    <section class="services" id="services">
+        <h2 class="heading">My <span>Services</span></h2>
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-code-alt'></i>
+                <h3>Web Development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, eaque, odio incidunt deleniti iusto debitis ducimus delectus quae veritatis quod illo quaerat.</p>
+                <p class="service-details">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed pariatur eum exercitationem qui ipsum? Quisquam cumque aliquid dicta accusamus qui consectetur? Placeat molestias sit voluptatibus!
+                </p>
+                <button onclick="servicestoggleContent(this)" class="btn">Read More</button>
+
+            </div>
+            <div class="services-box">
+                <i class='bx bx-code-curly'></i>
+                <h3>Software Dev</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, eaque, odio incidunt deleniti iusto debitis ducimus delectus quae veritatis quod illo quaerat.</p>
+                <p class="service-details">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed pariatur eum exercitationem qui ipsum? Quisquam cumque aliquid dicta accusamus qui consectetur? Placeat molestias sit voluptatibus!
+                </p>
+                <button onclick="servicestoggleContent(this)" class="btn">Read More</button>
+
+            </div>
+            <div class="services-box">
+                <i class='bx bx-camera'></i>
+                <h3>Photographer</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, eaque, odio incidunt deleniti iusto debitis ducimus delectus quae veritatis quod illo quaerat.</p>
+                <p class="service-details">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed pariatur eum exercitationem qui ipsum? Quisquam cumque aliquid dicta accusamus qui consectetur? Placeat molestias sit voluptatibus!
+                </p>
+                <button onclick="servicestoggleContent(this)" class="btn">Read More</button>
+            </div>
         </div>
     </section>
+
+    <!-- portfolio section design -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Projects</span></h2>
+
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="Images/p1.jpeg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>Web Development</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora accusamus voluptas ab delectus exercitationem maxime.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="Images/p2.jpeg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>Software Dev</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora accusamus voluptas ab delectus exercitationem maxime.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="Images/p2.jpeg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>Software Dev</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora accusamus voluptas ab delectus exercitationem maxime.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="Images/p2.jpeg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>Software Dev</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora accusamus voluptas ab delectus exercitationem maxime.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="Images/p2.jpeg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>Software Dev</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora accusamus voluptas ab delectus exercitationem maxime.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="Images/p4.jpeg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>photography</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora accusamus voluptas ab delectus exercitationem maxime.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section design -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact<span>Me!</span></h2>
+        <form action="#">
+            <div class="input-box">
+                <div class="input-field field">
+                    <input type="text" placeholder="Full Name"  id="name" class="item" autocomplete="off">
+                    <div class="error-txt">Full Name can't be blank</div>
+                </div>
+                <div class="input-field field">
+                    <input type="email" placeholder="Email Address"  id="email" class="item" autocomplete="off">
+                    <div class="error-txt">Email Address can't be blank</div>
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-field field">
+                    <input type="text" placeholder="Phone Number"  id="phone" class="item" autocomplete="off">
+                    <div class="error-txt">Phone Number can't be blank</div>
+                </div>
+                <div class="input-field field">
+                    <input type="text" placeholder="subject"  id="subject" class="item" autocomplete="off">
+                    <div class="error-txt"><i class="fa-regular fa-circle-exclamation">Subject can't be blank</i></div>
+                </div>
+            </div>
+            <div class="textare-field field">
+                <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message" class="item" autocomplete="off"></textarea>
+                <div class="error-txt"><i class="fa-solid fa-triangle-exclamation">Message can't be blank</i></div>
+            </div>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+    <div class="arrow">
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </div>
+    <!-- footer design -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by Harish | All Right Reserved</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Script file -->
+    <script src="js/script.js"></script>
 </body>
 </html>
