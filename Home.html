@@ -191,28 +191,28 @@
         <h2 class="heading">Contact<span>Me!</span></h2>
         <form action="#">
             <div class="input-box">
-                <div class="input-field field">
-                    <input type="text" placeholder="Full Name"  id="name" class="item" autocomplete="off">
-                    <div class="error-txt">Full Name can't be blank</div>
-                </div>
-                <div class="input-field field">
-                    <input type="email" placeholder="Email Address"  id="email" class="item" autocomplete="off">
-                    <div class="error-txt">Email Address can't be blank</div>
+                <div class="input-field field ">
+                    <input type="text" placeholder="Full Name"  id="name" class="item " autocomplete="off" onkeyup="validateName()">
+                    <div class="error-txt name"></div>
+                </div> 
+                <div class="input-field field ">
+                    <input type="email" placeholder="Email Address"  id="email" class="item " autocomplete="off" onkeyup="checkEmail()">
+                    <div class="error-txt email"></div>
                 </div>
             </div>
             <div class="input-box">
-                <div class="input-field field">
-                    <input type="text" placeholder="Phone Number"  id="phone" class="item" autocomplete="off">
-                    <div class="error-txt">Phone Number can't be blank</div>
+                <div class="input-field field ">
+                    <input type="text" placeholder="Phone Number"  id="phone" class="item " autocomplete="off" onkeyup="validatePhone()">
+                    <div class="error-txt phone">Phone Number can't be blank</div>
                 </div>
                 <div class="input-field field">
-                    <input type="text" placeholder="subject"  id="subject" class="item" autocomplete="off">
-                    <div class="error-txt"><i class="fa-regular fa-circle-exclamation">Subject can't be blank</i></div>
+                    <input type="text" placeholder="subject"  id="subject" class="item " autocomplete="off" onkeyup="validateSubject()">
+                    <div class="error-txt subject">Subject can't be blank</div>
                 </div>
             </div>
-            <div class="textare-field field">
+            <div class="textarea-field field ">
                 <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message" class="item" autocomplete="off"></textarea>
-                <div class="error-txt"><i class="fa-solid fa-triangle-exclamation">Message can't be blank</i></div>
+                <div class="error-txt message">Message can't be blank</div>
             </div>
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
@@ -231,7 +231,7 @@
         </div>
     </footer>
 
-    
+    <!-- swal-sucess page & smtp.js -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Scroll reveal -->

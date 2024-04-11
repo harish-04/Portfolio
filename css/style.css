@@ -476,20 +476,23 @@ form .input-box{
     display: flex;
     justify-content: space-between;
 }
-.contact form .input-box input,
-.contact form textarea{
+.field .item{
     width: 100%;
     padding: 1.5rem;
     font-size: 1.6rem;
     color: var(--text-color);
-    background: var(--bg-color);
+    background: transparent;
+    border:2px solid var(--shadow-color);
     border-radius: .8rem;
     margin: 0.7rem 0;
     box-shadow: 0 .1rem .5rem var(--shadow-color);
 }
 
-.contact form .input-box .input-field{
+.input-box .input-field{
     width: 49%;
+}
+.field.error .item{
+    border-color: red;
 }
 
 .field .error-txt{
@@ -499,6 +502,11 @@ form .input-box{
     margin: -5px 0 10px;
     display: none;
 }
+
+.field.error .error-txt{
+    display: block;
+}
+
 
 .contact form textarea{
     resize: none;

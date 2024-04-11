@@ -40,7 +40,6 @@ function servicestoggleContent(button) {
 /*================== Success prompt ==========================*/ 
 
 const form = document.querySelector('form');
-
 const fullName = document.getElementById("name");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
@@ -54,9 +53,7 @@ const bodyMessage =`Full Name: ${fullName.value}<br>
                     Message: ${message.value}`;
 
     Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "harishvithanala04@gmail.com",
-        Password : "75385BF0B8402FA51982BEB81F6B2F6F5F1F",
+        SecureToken :"5718c176-1663-4af7-9812-4103a3e085e7",
         To : 'harishvithanala04@gmail.com',
         From : "harishvithanala04@gmail.com",
         Subject : subject.value,
@@ -76,7 +73,15 @@ const bodyMessage =`Full Name: ${fullName.value}<br>
                 if (result.isConfirmed) {
                     // Refresh the page
                     location.reload();
-                    // window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        }else {
+            Swal.fire({
+                title: "Error!",
+                text: "Failed to send message.",
+                icon: "error",
+                customClass: {
+                    popup: 'my-popup-class',
                 }
             });
         }
@@ -84,13 +89,122 @@ const bodyMessage =`Full Name: ${fullName.value}<br>
     );
 }
 
+function checkInputs(){
+    const items = document.querySelectorAll(".item");
+
+    for(const item of items){
+    
+        if(item.value == ""){
+            item.classList.add("error");
+            item.parentElement.classList.add("error");
+        }
+
+        item.addEventListener("keyup",()=>{
+            if(item.value != ""){
+                item.classList.remove("error");
+                item.parentElement.classList.remove("error");
+            }else{
+                item.classList.add("error");
+                item.parentElement.classList.add("error");
+            }
+        });
+    }
+}
+
+function validateName(){
+    const nameRegex = /^[A-za-z]*\s{1}[A-za-z]*$/;
+    const errorTxtName = document.querySelector(".error-txt.name");
+
+    if(!fullName.value.match(nameRegex)){
+        fullName.classList.add("error");
+        fullName.parentElement.classList.add("error");
+
+        if(fullName.value.length == 0){
+            errorTxtName.innerText = "Name is required";
+        }else{
+            errorTxtName.innerText ="Write full name";
+        }
+    }else{
+        fullName.classList.remove("error");
+        fullName.parentElement.classList.remove("error");
+    }
+}
+
+function checkEmail(){
+    const emailRegex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/;
+
+    const errorTxtEmail = document.querySelector(".error-txt.email")
+
+    if(!email.value.match(emailRegex)){
+        email.classList.add("error");
+        email.parentElement.classList.add("error");
+
+        if(email.value != ""){
+            errorTxtEmail.innerText = "Enter a valid email address";
+        }
+        else{
+            errorTxtEmail.innerText = "Email Address can't be blank";
+        }
+    }else{
+        email.classList.remove("error");
+        email.parentElement.classList.remove("error");
+    }
+}
+
+function validatePhone(){
+    const phoneRegex = /^[0-9]{10}$/;
+    const errorTxtPhone = document.querySelector(".error-txt.phone");
+    
+
+    if(!phone.value.match(phoneRegex)){
+        phone.classList.add("error");
+        phone.parentElement.classList.add("error");
+
+        if(phone.value.length == 0){
+            errorTxtPhone.innerText = "Phone Number is required";
+        }else if(phone.value.length !== 10){
+            errorTxtPhone.innerText ="Phone Number should be 10 digits";
+        }else if(!phone.value.match(phoneRegex)){
+            errorTxtPhone.innerText = "Phone Number should contain only digits 0-9";
+        }else{
+            errorTxtPhone.innerText = "Phone Number is required";
+        }
+    }else{
+        phone.classList.remove("error");
+        phone.parentElement.classList.remove("error");
+    }
+}
+
+function validateSubject(){
+    const subjectRegex = /^(?:\S+\s*){1,}$/;
+    const errorTxtSubject = document.querySelector(".error-txt.name");
+
+    if(!subject.value.match(subjectRegex)){
+        subject.classList.add("error");
+        subject.parentElement.classList.add("error");
+
+        if(subject.value != ""){
+            errorTxtSubject.innerText = "Subject can't be blank";
+        }
+
+    }else{
+        subject.classList.remove("error");
+        subject.parentElement.classList.remove("error");
+    }
+}
+
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+    checkInputs();
 
-    sendEmail();
+    if(!fullName.classList.contains("error") && !email.classList.contains("error") && !phone.classList.contains("error") && !subject.classList.contains("error") && !message.classList.contains("error")){
+        sendEmail();
+
+        form.reset();
+        return false;
+    }
 });
-
 
 
 
@@ -98,7 +212,6 @@ form.addEventListener("submit", (e) => {
 
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
-
 
 window.onscroll = () => {
 
@@ -116,12 +229,10 @@ window.onscroll = () => {
         };
     });
 
-
 /*================== sticky navbar ==========================*/ 
 
-    let header = document.querySelector('.header');
-
-    header.classList.toggle('sticky', window.scrollY > 100);
+let header = document.querySelector('.header');
+header.classList.toggle('sticky', window.scrollY > 100);
 
 /*==================Remove Menu icon navbar when click navbar link(scroll) ==========================*/ 
 menuIcon.classList.remove('bx-x');
@@ -129,11 +240,9 @@ navbar.classList.remove('active');
 
 };
 
-
 /*================== Dark light mode ==========================*/ 
 
 let darkModeIcon = document.querySelector('#darkMoon-icon');
-
 darkModeIcon.onclick = () =>{
     darkModeIcon.classList.toggle('bx-sun');
     document.body.classList.toggle('dark-mode');
@@ -142,7 +251,7 @@ darkModeIcon.onclick = () =>{
 /*================== Scroll reveal ==========================*/ 
 
 ScrollReveal({ 
-    reset: true ,
+    reset: true,
     distance: '80px',
     duration: 2000,
     delay: 200
