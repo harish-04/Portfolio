@@ -18,7 +18,7 @@
     --white-color: #fdfdfd;
     --shadow-color : rgba(0,0,0,.2);
     --blue-color: rgb(0, 31, 152);
-    --filter-color: brightness(90%) saturate(250%)  sepia(10%);
+    --filter-color: grayscale(450%);
 }
 
 .dark-mode{
@@ -26,7 +26,7 @@
     --text-color : #fdfdfd;
     --shadow-color : rgba(74, 74, 74, 0.995);
     --blue-color: rgb(0, 31, 152);
-    --filter-color :none;
+    --filter-color :brightness(450%);
 }
 html{
     font-size: 62.5%;
@@ -76,10 +76,6 @@ body{
     margin: 0;
     padding: 0;
 }
-
-/* .colored-img{
-    filter: grayscale(100%) brightness(0%);
-} */
 
 .navbar a {
     position: relative;
@@ -372,7 +368,7 @@ span{
 
 .skills-box .fa-java{
     margin: 2rem;
-    color: #007396;
+    color: #cb0202;
 }
 .skills-box .fa-js{
     margin: 2rem;
@@ -670,22 +666,17 @@ form .textarea-field  .error-txt{
     justify-content: center;
     align-items: center;
     padding: .8rem;
-    background: var(--white-color);
-}
-
-.footer-iconTop a:hover{
-    outline-color: var(--white-color);
 }
 
 .footer-iconTop a i{
     font-size: 3rem;
-    color: var(--blue-color);
+    color: var(--text-color);
 }
 
 .my-popup-class {
-    width: 500px; /* Set the width to your desired size */
-    max-width: 90%; /* Optional: Set a maximum width to ensure responsiveness */
-    font-size: 18px; /* Optional: Adjust font size */
+    width: 500px; 
+    max-width: 90%; 
+    font-size: 18px; 
     border-radius: 10%;
 }
 
@@ -747,7 +738,7 @@ form .textarea-field  .error-txt{
         display: none;
     }
 
-    .services,
+    .skills,.services,
     .portfolio{
         padding-bottom: 7rem;
     }
@@ -762,6 +753,7 @@ form .textarea-field  .error-txt{
 }
 
 @media (max-width: 768px){
+
     #menu-icon{
         display: block;
     }
@@ -780,6 +772,7 @@ form .textarea-field  .error-txt{
         width: 100%;
         padding: 1rem 3%;
         background: var(--bg-color);
+        background-color: red;
         border-top: .1rem solid rgba(0,0,0,.2);
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
         display: none;
@@ -893,7 +886,7 @@ form .textarea-field  .error-txt{
         margin-top: -2rem;
     }
 
-    .services h2,
+    .skills h2,.services h2,
     .portfolio h2{
         margin-bottom: 3rem;
     }
