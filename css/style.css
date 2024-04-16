@@ -161,19 +161,31 @@ section {
     width: 4rem;
     height: 4rem;
     background: transparent;
-    border: .2rem solid var(--blue-color);
-    border-radius:  50%;
+    border: .2rem solid var(--text-color);
+    border-radius:  25%;
     box-shadow: 0 .2rem .5rem var(--shadow-color);
-    font-size: 2rem;
-    color: var(--blue-color);
+    font-size: 3.5rem;
     margin: 2.5rem 1.5rem 3rem 0;
     transition: .5 ease;
 }
 
-.home-content .social-media a:hover{
-    background: var(--blue-color);
-    color: var(--white-color);
+.social-media .bxl-github{
+    color: var(--text-color);
+    transition: transform 0.3s ease;
 }
+.social-media .bxl-instagram{
+    color: #C13584;
+    transition: transform 0.3s ease;
+}
+.social-media .bxl-linkedin{
+    color: #0077B5;
+    transition: transform 0.3s ease;
+}
+
+
+.home-content .social-media a:hover{
+    transform: translateY(-5px) scale(1.2);
+} 
 
 .btn{
     display:  inline-block;
@@ -343,9 +355,18 @@ span{
     min-height: auto;
     padding-bottom: 7rem;
 }
-.skills-content h2{
-    text-align:  left;
+.skills h2{
+    text-align:  center;
     line-height: 2.4;
+}
+
+.skills h3{
+    text-align: left;
+    line-height: 1.4;
+    font-size: 2.5rem;
+    padding: 0 0  0 10rem;
+    text-decoration: underline;
+    /* border-bottom: 2px solid var(--text-color); */
 }
 
 .skills .skills-container{
@@ -407,6 +428,8 @@ span{
     color: #FF6C37;
 }
 
+
+
 .skills-box i[title]:hover::after {
     content: attr(title);
     position: absolute;
@@ -444,9 +467,6 @@ span{
 .skill:hover::after {
     display: block;
 }
-
-
-
 
 .services{
     min-height: auto;
