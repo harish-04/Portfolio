@@ -178,7 +178,9 @@ section {
     transition: transform 0.3s ease;
 }
 .social-media .bxl-linkedin{
-    color: #0077B5;
+    color: var(--white-color);
+    background-color: #0077B5;
+    border-radius: 25%;
     transition: transform 0.3s ease;
 }
 
