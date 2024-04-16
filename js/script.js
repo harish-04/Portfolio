@@ -112,7 +112,8 @@ function checkInputs(){
 }
 
 function validateName(){
-    const nameRegex = /^[A-za-z]*\s{1}[A-za-z]*$/;
+    const nameRegex =/^[A-Za-z]+(?:\s[A-Za-z]+)+$/;
+    // /^[A-za-z]*\s[A-za-z]*$/;
     const errorTxtName = document.querySelector(".error-txt.name");
 
     if(!fullName.value.match(nameRegex)){
@@ -131,7 +132,7 @@ function validateName(){
 }
 
 function checkEmail(){
-    const emailRegex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/;
+    const emailRegex = /^([a-z\d\.-]+)@([a-z]{2,}[a-z\d-]*)\.([a-z]{2,3})(\.[a-z]{2,3})?$/;
 
     const errorTxtEmail = document.querySelector(".error-txt.email")
 
@@ -160,14 +161,17 @@ function validatePhone(){
         phone.classList.add("error");
         phone.parentElement.classList.add("error");
 
-        if(phone.value.length == 0){
+        if(phone.value.length === 0){
             errorTxtPhone.innerText = "Phone Number is required";
+        }else if(!phone.value.match(/^\d+$/)){
+            errorTxtPhone.innerText = "Phone Number should contain only digits 0-9";
+        }else if (!/^\d/.test(phone.value)) {
+            errorTxtPhone.innerText = "Phone Number should start with a digit";
         }else if(phone.value.length !== 10){
             errorTxtPhone.innerText ="Phone Number should be 10 digits";
-        }else if(!phone.value.match(phoneRegex)){
-            errorTxtPhone.innerText = "Phone Number should contain only digits 0-9";
-        }else{
-            errorTxtPhone.innerText = "Phone Number is required";
+        }
+        else{
+            errorTxtPhone.innerText = "Invalid Phone Number";
         }
     }else{
         phone.classList.remove("error");
