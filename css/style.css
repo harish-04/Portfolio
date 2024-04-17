@@ -705,6 +705,7 @@ form .textarea-field  .error-txt{
 
 /* BREAKPOINTS */
 @media (max-width: 1200px){
+    
     html{
         font-size: 50%;
     }
@@ -776,9 +777,17 @@ form .textarea-field  .error-txt{
 }
 
 @media (max-width: 768px){
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        position: relative;
+    }
 
     #menu-icon{
         display: block;
+        cursor: pointer;
     }
 
     #darkmode-icon{
