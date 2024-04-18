@@ -782,9 +782,9 @@ form .textarea-field  .error-txt{
     html{
         overflow-x: hidden;
     }
-    body{
+    /* body{
         overflow-x: hidden;
-    }
+    } */
     .header {
         display: flex;
         justify-content: space-between;
@@ -866,16 +866,16 @@ form .textarea-field  .error-txt{
         transform-origin: 0;
     }
     .home .profession-box .profession:nth-child(1){
-        transform: rotate(-121deg) translate(-154px, -227px);
+        transform: rotate(-130deg) translate(-40px, -120px);
     }
     .home .profession-box .profession:nth-child(1) i{
         margin-right: 0;
     }
     .home .profession-box .profession:nth-child(2){
-        transform: rotate(0deg) translate(0, -335px);
+        transform: rotate(0deg) translate(0, -180px);
     }
     .home .profession-box .profession:nth-child(3){
-        transform: rotate(114deg) translate(-113px, -425px);
+        transform: rotate(130deg) translate(-40px, -120px);
     }
     .home .profession-box .circle{
         position: fixed;
