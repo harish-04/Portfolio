@@ -782,9 +782,6 @@ form .textarea-field  .error-txt{
     html{
         overflow-x: hidden;
     }
-    /* body{
-        overflow-x: hidden;
-    } */
     .header {
         display: flex;
         justify-content: space-between;
