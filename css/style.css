@@ -38,15 +38,15 @@ html{
 }
 
 body{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     background: var(--bg-color);
     color: var(--text-color);
 }
 .header{
-    position: fixed;
+    position: absolute;
     top:0;
     left: 0;
     width: 100%;
@@ -192,7 +192,6 @@ section {
     transition: transform 0.3s ease;
 }
 
-
 .home-content .social-media a:hover{
     transform: translateY(-5px) scale(1.2);
 } 
@@ -279,13 +278,12 @@ section {
     padding-bottom: 20px;
 }
 
-
 .home .profession i{
     font-size: 3.8rem;
 }
 
 .home .profession h3{
-    font-size: 3.2rem;
+    font-size: 3rem;
     line-height: 1;
     font-weight: 600;
 }
@@ -293,7 +291,6 @@ section {
 .home .profession-box .circle{
     width: 560px;
     height: 560px;
-    /* color: var(--blue-color); */
     border: 3px solid var(--blue-color);
     border-radius: 50%;
 }
@@ -318,6 +315,7 @@ section {
     height: 80%;
     pointer-events: none;
 }
+
 b{
     color: var(--blue-color);
 }
@@ -396,7 +394,6 @@ span{
     font-size: 6rem;
     transition: .5 ease;
 }
-
 .skills-box .fa-java{
     margin: 2rem;
     color: #cb0202;
@@ -438,8 +435,6 @@ span{
     color: #FF6C37;
 }
 
-
-
 .skills-box i[title]:hover::after {
     content: attr(title);
     position: absolute;
@@ -451,7 +446,8 @@ span{
     padding: 5px;
     border-radius: 5px;
     white-space: nowrap;
-  }
+}
+
 .skill {
     margin: 10px;
     font-size: 8rem; /* Adjust the size as needed */
@@ -461,7 +457,6 @@ span{
 .skill:hover i {
     display: inline;
 }
-
 
 .skill::after {
     content: attr(data-title);
@@ -715,14 +710,19 @@ form .textarea-field  .error-txt{
 @media (max-width: 1200px){
     
     html{
+        margin: 0;
+        padding: 0;
         font-size: 50%;
+        overflow-x: hidden;
+    }
+    
+    body{
+        height: 100vh; 
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
     .home .profession-container{
-        height: 85.8rem;
-    }
-
-    .home .profession-container .profession-box{
-        right: -12rem;
         height: 85.8rem;
     }
     .home .profession-container .overlay{
@@ -746,12 +746,10 @@ form .textarea-field  .error-txt{
 }
 
 @media (max-width: 991px){
-
     .navbar a:nth-child(1),
     .navbar a:nth-child(2){
-        color: var(--main-color);
+        color: var(--blue-color);
     }
-
     .navbar a.active::before{
         background: var(--main-color);
         opacity: .7;
@@ -762,33 +760,29 @@ form .textarea-field  .error-txt{
     .home .profession-container .profession-box{
         right: -45rem;
     }
-
     .home .profession-container .overlay{
         right: -39.5rem;
     }
     .home img{
         display: none;
     }
-
     .skills,.services,
     .portfolio{
         padding-bottom: 7rem;
     }
-
     .contact{
         min-height: auto;
     }
-    
     .footer{
         padding: 2rem 3%;
     }
 }
 
 @media (max-width: 768px){
-    .html{
+    html{
         overflow-x: hidden;
     }
-    .body{
+    body{
         overflow-x: hidden;
     }
     .header {
@@ -798,12 +792,10 @@ form .textarea-field  .error-txt{
         padding: 1rem;
         position: absolute;
     }
-
     #menu-icon{
         display: block;
         cursor: pointer;
     }
-
     #darkmode-icon{
         position: absolute;
         right: 7rem;
@@ -818,28 +810,23 @@ form .textarea-field  .error-txt{
         width: 100%;
         padding: 1rem 3%;
         background: var(--bg-color);
-        background-color: red;
         border-top: .1rem solid rgba(0,0,0,.2);
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
         display: none;
     }
-
     .navbar.active{
         display: block;
     }
-
     .navbar a{
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
         color: var(--text-color);
     }
-
     .navbar a:nth-child(1),
     .navbar a:nth-child(2){
         color: var(--text-color);
     }
-
     .navbar a.active{
         color: var(--blue-color);
     }
@@ -847,30 +834,25 @@ form .textarea-field  .error-txt{
     .navbar a::before{
         display: none;
     }
-
     .home{
         padding: 0 3% 23rem;
         justify-content: center;
         text-align: center;
     }
-
     .home-content h3{
         font-size: 2.6rem;
     }
     .home-content h1{
         font-size:  5rem;
     }
-
     .home-content .social-media a{
         margin: 2.5rem .75rem 3rem;
     }
-
     .home .profession-container{
         left: 0;
         width: 100%;
         height: 100%;
     }
-    
     .home .profession-container .profession-box{
         position: fixed;
         top: 65%;
@@ -878,37 +860,29 @@ form .textarea-field  .error-txt{
         border-radius: 0;
         width: 100%;
     }
-
     .home .profession-box .profession{
         padding: 0 11px;
         left: auto;
         transform-origin: 0;
     }
-
     .home .profession-box .profession:nth-child(1){
         transform: rotate(-121deg) translate(-154px, -227px);
     }
-
     .home .profession-box .profession:nth-child(1) i{
         margin-right: 0;
     }
-
     .home .profession-box .profession:nth-child(2){
         transform: rotate(0deg) translate(0, -335px);
     }
-
     .home .profession-box .profession:nth-child(3){
         transform: rotate(114deg) translate(-113px, -425px);
     }
-
     .home .profession-box .circle{
         position: fixed;
         width: 680px;
         height: 680px;
         z-index: -1;
     }
-
-
     .home .profession-container .overlay{
         position: fixed;
         top: 75rem;
@@ -917,31 +891,24 @@ form .textarea-field  .error-txt{
         transform: rotate(90deg) translate(-50% , 50%) scaleY(3);
         border-width: 23.9rem;
     }
-
     .about{
         flex-direction: column-reverse;
         text-align: center;
     }
-
     .about-content h2{
         text-align: center;
     }
-
     .about-img img{
         width: 45vw;
         margin-top: -2rem;
     }
-    
     .skills h2,.services h2,
     .portfolio h2{
-        /* background-color: #61DAFB; */
         margin-bottom: 3rem;
     }
-
     .portfolio .portfolio-container{
         grid-template-columns: repeat(2,1fr);
     }
-
 }
 
 @media (max-width:617px){
@@ -954,28 +921,22 @@ form .textarea-field  .error-txt{
     html{
         font-size: 50%;
     }
-
     #darkMode-icon{
         right: 6rem;
         color: var(--text-color);
     }
-
     .home{
         padding: 0 3% 30rem;
     }
-
     .home .profession-box .profession:nth-child(1){
         transform: rotate(-90deg) translate(-110px,-220px);
     }
-
     .home .profession-box .profession:nth-child(2){
         transform: rotate(0deg) translate(5px,-335px);
     }
-
     .home .profession-box .profession:nth-child(3){
         transform: rotate(90deg) translate(-105px,-440px);
     }
-
     .contact form .input-box input{
         width: 100%;
     };
