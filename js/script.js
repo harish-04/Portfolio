@@ -11,15 +11,18 @@ menuIcon.onclick = () =>{
 
 
 function toggleContent() {
-    var extraContent = document.getElementById('extra-content');
-    var buttonText = document.getElementById('toggleBtn');
+    const extraContent1 = document.getElementById('extra-content1');
+    const extraContent2 = document.getElementById('extra-content2');
+    const button = document.getElementById('toggleBtn');
 
-    if (extraContent.style.display === 'none') {
-        extraContent.style.display = 'block';
-        buttonText.textContent = 'Read Less';
+    if (extraContent1.style.display === 'none') {
+        extraContent1.style.display = 'block';
+        extraContent2.style.display = 'block';
+        button.textContent = 'Read Less';
     } else {
-        extraContent.style.display = 'none';
-        buttonText.textContent = 'Read More';
+        extraContent1.style.display = 'none';
+        extraContent2.style.display = 'none';
+        button.textContent = 'Read More';
     }
 }
 
