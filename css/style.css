@@ -853,6 +853,29 @@ form .textarea-field  .error-txt{
     .home .profession-container .overlay{
         right: -9rem;
     }
+    #experience {
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .experience-content {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .company-details {
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    .horizontal-line {
+        width: 150px;
+        margin-right: 10px;
+    }
+
+    .company-name h3 {
+        font-size: 1.6rem; /* Smaller font size on medium screens */
+    }
 }
 
 @media (max-width: 1170px){
@@ -890,6 +913,24 @@ form .textarea-field  .error-txt{
     }
     .home img{
         display: none;
+    }
+    .experience-content {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .company-details {
+        margin-top: 2rem;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .horizontal-line {
+        width: 120px; /* Make the line shorter for smaller screens */
+    }
+
+    .company-name h3 {
+        font-size: 1.4rem; /* Adjust font size further for mobile */
     }
     .skills,.services,
     .portfolio{
@@ -1024,6 +1065,40 @@ form .textarea-field  .error-txt{
         width: 45vw;
         margin-top: -2rem;
     }
+    #experience {
+        padding: 20px;
+        margin-top: 10px;
+    }
+
+    .experience-content {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .company-details {
+        position: relative;
+        margin-top: 1rem;
+        padding-left: 0;
+    }
+
+    .vertical-line {
+        left: 0;
+        height: 50%;
+    }
+
+    .horizontal-line {
+        width: 100px;
+    }
+
+    .company-name h3 {
+        font-size: 1.2rem; /* Further reduce font size */
+    }
+
+    .company-info {
+        max-width: 90%;
+        margin-left: 0;
+        padding: 10px;
+    }
     .skills h2,.services h2,
     .portfolio h2{
         margin-bottom: 3rem;
@@ -1036,6 +1111,31 @@ form .textarea-field  .error-txt{
 @media (max-width:617px){
     .portfolio .portfolio-container{
         grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 576px) {
+    #experience {
+        padding: 10px;
+        margin-top: 5px;
+    }
+
+    .company-details {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+
+    .horizontal-line {
+        width: 80px;
+        margin-right: 8px;
+    }
+
+    .company-name h3 {
+        font-size: 1rem; /* Very small font size for mobile */
+    }
+
+    .company-info {
+        padding: 8px;
+        margin-left: 0;
     }
 }
 
