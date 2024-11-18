@@ -51,21 +51,33 @@ const phone = document.getElementById("phone");
 const subject = document.getElementById("subject");
 const message = document.getElementById("message");
 
-function sendEmail(){
-const bodyMessage =`Full Name: ${fullName.value}<br>
-                    Email: ${email.value}<br>
-                    Phone Number: ${phone.value}<br>
-                    Message: ${message.value}`;
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+     // Prevent default form submission
+    sendEmail(); // Call sendEmail function
+});
+
+function sendEmail() {
+    console.log("Sending email...");
+    console.log("Full Name:", fullName.value);
+    console.log("Email:", email.value);
+    console.log("Phone:", phone.value);
+    console.log("Subject:", subject.value);
+    console.log("Message:", message.value);
+
+    const bodyMessage = `Full Name: ${fullName.value}<br>
+                         Email: ${email.value}<br>
+                         Phone Number: ${phone.value}<br>
+                         Message: ${message.value}`;
 
     Email.send({
-        SecureToken :"5718c176-1663-4af7-9812-4103a3e085e7",
-        To : 'harishvithanala04@gmail.com',
-        From : "harishvithanala04@gmail.com",
-        Subject : subject.value,
-        Body : bodyMessage
-    }).then(
-      message =>{
-        if(message=="OK"){
+        SecureToken: "9ac9034e-a30d-4373-a394-61de4f6e3e65",
+        To: 'harishvithanala04@gmail.com',
+        From: "harishvithanala04@gmail.com",
+        Subject: subject.value,
+        Body: bodyMessage
+    }).then(message => {
+        if (message === "OK") {
             Swal.fire({
                 title: "Success!",
                 text: "Message sent successfully!",
@@ -74,13 +86,11 @@ const bodyMessage =`Full Name: ${fullName.value}<br>
                     popup: 'my-popup-class',
                 }
             }).then((result) => {
-                // Check if the user clicked "OK"
                 if (result.isConfirmed) {
-                    // Refresh the page
-                    location.reload();
+                    location.reload(); // Refresh the page
                 }
             });
-        }else {
+        } else {
             Swal.fire({
                 title: "Error!",
                 text: "Failed to send message.",
@@ -90,9 +100,11 @@ const bodyMessage =`Full Name: ${fullName.value}<br>
                 }
             });
         }
-      }
-    );
+    }).catch(err => {
+        console.error("Email sending failed:", err); // Log errors
+    });
 }
+
 
 function checkInputs(){
     const items = document.querySelectorAll(".item");
